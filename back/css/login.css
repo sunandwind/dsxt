@@ -1,0 +1,13 @@
+body{
+  background: #222D32;
+}
+.container .panel-header{
+ height: 20px;
+ line-height: 20px;
+ text-align: center;
+ font-size: 20px;
+}
+.mt_150{
+  margin-top: 150px;
+}
+
