@@ -5,8 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
+  <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+  <link rel="stylesheet" href="./css/index.css">
+
 </head>
 <body>
-  <div>后台管理</div>
+ <!-- 左边侧边栏 -->
+ <div class="lt_asode">
+   <div class="brand">
+     <a href="#">黑马26期</a>
+   </div>
+    <!-- 用户信息 -->
+   <div class="user" >
+    <img src="./imags/leo.jpg" alt="">
+    <p>leo.meiss</p>
+   </div>
+   <!-- 导航栏 -->
+   <div class="nav">
+     <ul>
+       <li>
+         <a href="#"> <i class="glyphicon glyphicon-user"></i><span>用户管理</span></a>
+      </li>
+       <li class="active" >
+         <a href="#"> <i class="glyphicon glyphicon-list"></i><span>分类管理</span></a>
+         <div class="fenlei1" style="display: none;">
+            <a href="#" class="fenlei">一级分类</a>
+            <a href="#" class="fenlei">二级分类</a>
+         </div>
+        </li>
+       <li>
+         <a href="#"> <i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a>
+        </li>
+     </ul>
+   </div>
+ </div>
+ <!-- 右边栏 -->
+  <div class="lt_main">
+  <!-- 头部导航 -->
+   <div class="lt_topbar">
+    <a href="#" class="pull-left icon_menu"><i    class="glyphicon glyphicon-align-justify"></i></a>
+    <a href="#" class="pull-right icon_logout"><i    class="glyphicon glyphicon-log-out"></i></a>
+  </div>
+  <!-- 底部容器 container-fluid 流式布局容器, width: 100%, 有默认的左右padding -->
+
+  <div class="container-fluid">
+      <ol class="breadcrumb">
+          <li><a href="#">管理系统</a></li>
+          <li>首页</li>
+        </ol>
+        <div class="lt_content">
+        <div class="pull-left echarts_1 "></div>
+        <div class="pull-right echarts_2"></div>
+      </div>
+  </div>
+</div>
+
+  <script src="./lib/jquery/jquery.js"></script>
+  <script src="./lib/bootstrap/js/bootstrap.js"></script>
+  <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+  <script src="./lib/nprogress/nprogress.js"></script>
+  <script src="./lib/echarts/echarts.common.min.js"></script>
+  <script src="./js/checkLogin.js"></script>
+  <script src="./js/index.js"></script>
 </body>
 </html>

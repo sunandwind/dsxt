@@ -1,0 +1,117 @@
+html,body {
+  height: 100%;
+}
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a:link,
+a:visited,
+a:hover,
+a:active{
+  text-decoration:none;
+}
+.active{
+  background: #1D1F21 !important;
+  border-left: 2px solid skyblue !important;
+}
+/* 左侧边栏 */
+.lt_asode{
+  width: 180px;
+  height: 100%;
+  background: #222D32;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.lt_asode .brand {
+  width: 180px;
+  height: 50px;
+  background: #367FA9;
+  line-height: 50px;
+  text-align: center;
+  z-index: 999;
+}
+.lt_asode .brand a{
+  color: #fff;
+  font-size: 25px;
+}
+.lt_asode .user{
+  width: 180px;
+  height: 180px;
+}
+.lt_asode .user img{
+ width: 80px;
+ height: 80px;
+ border-radius: 50%;
+ display: block;
+ margin: 0 auto;
+ margin-top: 30px;
+}
+.lt_asode .user p{
+  font-size: 25px;
+  color: #fff;
+  text-align: center;
+}
+.lt_asode .nav{
+width: 100%;
+}
+.nav ul li{
+  border-left: 1px solid transparent;
+  line-height: 40px;
+}
+.nav ul a{
+  display: block;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  margin-left: 40px;
+}
+.nav ul a span{
+  margin-left: 5px;
+}
+.nav .fenlei{
+  margin-left: 60px;
+}
+/* <!-- 右边栏 --> */
+.lt_main{
+  padding-left: 180px;
+  padding-top: 50px;
+  height: 1000px;
+}
+.lt_topbar{
+  width: 100%;
+  height: 50px;
+  padding-left: 180px;
+  background: #3C8DBC;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 666;
+}
+.lt_topbar .icon_menu,
+.lt_topbar .icon_logout
+{
+  display: block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+.lt_topbar .icon_menu i,
+.lt_topbar .icon_logout i {
+  font-size: 20px;
+  color: #fff;
+}
+.lt_main .breadcrumb{
+  margin-top: 20px;
+}
+
+.lt_content .echarts_1,
+.lt_content .echarts_2{
+  width: 48%;
+  height: 400px;
+  background: pink;
+} 
