@@ -16,6 +16,18 @@ a:active{
   background: #1D1F21 !important;
   border-left: 2px solid skyblue !important;
 }
+.grayColor{
+  color: #cccccc;
+}
+.mb_20 {
+  margin-bottom: 20px;
+}
+.table.table-bordered tr th,
+.table.table-bordered tr td {
+  text-align: center;
+  /* 表格中垂直对齐方式 */
+  vertical-align: middle;
+}
 /* 左侧边栏 */
 .lt_asode{
   width: 180px;
