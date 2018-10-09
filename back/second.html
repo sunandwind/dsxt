@@ -130,7 +130,7 @@
                 <input style="display: none;" type="file" id="fileupload" name="pic1" data-url="/category/addSecondCategoryPic">
               </div>
               <div class="form-group" id="imgBox">
-                  <img src="./images/none.png" width="100" height="100"  alt="">
+                  <img src="./imags/none.png" width="100" height="100"  alt="">
                   <input type="hidden" name="brandLogo">
                 </div>
             </div>
@@ -165,6 +165,17 @@
     </div>
   </div>
  <!-- 准备模板引擎 -->
+ <script type="text/html" id="secondTpl">
+  {{ each rows v i }}
+    <tr>
+      <td>{{ i + 1 + (page-1) * size }}</td>
+      <td>{{ v.categoryName }}</td>
+      <td>{{ v.brandName }}</td>
+      <td><img src="{{ v.brandLogo }}" height="50" alt=""></td>
+    </tr>
+  {{ /each }}
+</script>
+
  <!--
   type="text/html"
   type="text/template" 都可以标记当前script为字符串模板
@@ -177,6 +188,8 @@
 
 
   <script src="./lib/jquery/jquery.js"></script>
+  <script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+  <script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
   <script src="./lib/bootstrap/js/bootstrap.js"></script>
   <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
   <script src="./lib/nprogress/nprogress.js"></script>

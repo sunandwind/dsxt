@@ -42,43 +42,60 @@ $(function() {
       }
     })
   }
-// 2. 点击添加分类按钮, 显示模态框
-$('#addBtn').click(function() {
-  $('#addModal').modal("show");
+
+
+  // 2. 点击添加分类按钮, 显示模态框
+  $('#addBtn').click(function() {
+    $('#addModal').modal("show");
+
+    // 发送 ajax 请求, 请求所有的一级分类, 进行列表渲染
+    // 利用分页接口, 模拟获取全部一级分类的接口, 传 page=1, pageSize=100
     $.ajax({
-      type:"get",
-      url:"/category/queryTopCategoryPaging",
-      data:{
-        page:1,
-        pageSize:100
+      type: "get",
+      url: "/category/queryTopCategoryPaging",
+      data: {
+        page: 1,
+        pageSize: 100
       },
-      dataType:"json",
-      success:function(info){
-      console.log(info);
-      var htmlStr = template("dropdownTpl",info);
-      $(".dropdown-menu").html(htmlStr);
+      dataType: "json",
+      success: function( info ) {
+        console.log( info );
+        var htmlStr = template("dropdownTpl", info);
+        $('.dropdown-menu').html( htmlStr );
       }
     })
   });
- // 3. 给下拉列表中的 a 添加点击事件(通过事件委托注册), 获取 a 的文本, 设置给按钮
- $(".dropdown-menu").on("click","a",function(){
+
+
+  // 3. 给下拉列表中的 a 添加点击事件(通过事件委托注册), 获取 a 的文本, 设置给按钮
+  $('.dropdown-menu').on("click", "a", function() {
+    // 获取文本
     var txt = $(this).text();
-    $("#dropdownTxt").text(txt);
-    var id =$(this).data("id");
-    $('[name="categoryId"]').val(id);
-     // 选择了一级分类, 需要将一级分类校验状态, 更新成校验成功状态
+    // 设置给按钮
+    $('#dropdownTxt').text( txt );
+
+    // 获取当前 a 中存储的 id
+    var id = $(this).data("id");
+    // 设置给 name="categoryId" 的input
+    $('[name="categoryId"]').val( id );
+
+    // 选择了一级分类, 需要将一级分类校验状态, 更新成校验成功状态
     // 参数1: 字段名称
     // 参数2: 校验状态, VALID成功, INVALID失败
     // 参数3: 校验规则, 配置错误时的提示信息
     $('#form').data("bootstrapValidator").updateStatus("categoryId", "VALID");
-});
-// 4. 文件上传初始化
+  });
+
+
+
+  // 4. 文件上传初始化
   /*
    * 文件上传步骤
    * 1. 引包, 注意依赖问题
    * 2. html结构, 给 input:file添加 name 和 data-url 属性
    * 3. 通过 fileupload 方法初始化文件上传插件
    * */
+
   $('#fileupload').fileupload({
     dataType: "json",
     // 文件上传完成时调用的回调函数
@@ -98,12 +115,16 @@ $('#addBtn').click(function() {
     }
   });
 
-  
- // 5. 进行表单校验初始化
- $('#form').bootstrapValidator({
-   // 指定不校验的类型，默认为[':disabled', ':hidden', ':not(:visible)']
+
+
+
+  // 5. 进行表单校验初始化
+  $("#form").bootstrapValidator({
+    // 指定不校验的类型，默认为[':disabled', ':hidden', ':not(:visible)']
     // 需要对隐藏域进行校验, 不能排除隐藏域, 将 excluded 置为 [], 表示对所有 input 进行校验
     excluded: [],
+
+
     // 指定校验时显示的图标, 固定写法
     feedbackIcons: {
       valid: 'glyphicon glyphicon-ok',      // 校验成功
@@ -136,6 +157,9 @@ $('#addBtn').click(function() {
       }
     }
   });
+
+
+
 
   // 6. 注册表单校验成功事件, 阻止默认的表单提交, 通过 ajax 提交
   $('#form').on("success.form.bv", function( e ) {
@@ -174,7 +198,4 @@ $('#addBtn').click(function() {
 
 
 })
-
-
-
 
